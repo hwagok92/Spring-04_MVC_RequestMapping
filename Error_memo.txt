@@ -1,0 +1,46 @@
+								[프로젝트 자체가 실행이 되지 않을때]
+
+1.이클립스 종료=>C드라이브=>사용자=>user=>.m2=>repository폴더 삭제 후 =>Eclipse다시 열고 실행
+
+2.프로젝트 이름=>Maven=>Update Project=>Force update of Snapshots/Releases클릭 => finish
+
+3.web.xml에 한글처리 하는 코드
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>
+			org.springframework.web.filter.CharacterEncodingFilter
+		</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>forceEncoding</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	
+	
+4. WEB-INF밑에 있는 jsp파일들은 controller를 통해서만 실행할 수 있다. 파일에서 직접 실행하면 실행이 안된다. 대신 바로 실행 하고 싶다면 webapp밑에 만들면
+바로 실행할 수 있다. webapp는 webcontent와 같다.
+
+											[프로젝트 실행법] 
+
+프로젝트 이름 -> run as ->run on server -> 주소창에 http://localhost:8080/ex4/  member/view입력 ->
+														/WEB-INF/views/member/memberView.jsp 이곳으로 이동한다.
+														
+														
+														
+														
+														
+														
+														
+														
+														
+														
